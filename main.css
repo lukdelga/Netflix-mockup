@@ -1,0 +1,466 @@
+:root {
+    --opaque-black: rgb(39, 39, 39);
+    --main-red: red;
+    --main-white: white;
+    --grayish-white: rgb(163, 160, 160);
+    --alt-red: rgb(119, 5, 5);
+    --nav-color: black;
+}
+/* document reset and main fonts */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+/* limits document from expanding horizontaly over the viewport size and sets main background-color*/
+body {
+    background-color: var(--opaque-black);
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+/* next 3 blocks set the logo on the left and it's interactivity */
+#title-div {
+    float: left;
+    position: relative;
+    left: 5px;
+}
+
+#title-div span {
+    font-size: 2.2em;
+    font-weight: bolder;
+    color: var(--main-red);
+}
+
+#title-div span:hover {
+    color: var(--alt-red);
+    cursor: pointer;
+}
+/* header bar color and spacing */
+#main-header {
+    background-color: var(--nav-color);
+    padding: 5px 30px 30px 0;
+}
+/* the main nav on the page is a sideways unordered list with anchors as elements, next 3 blocks 
+sets their behavior*/
+#nav-list {
+    text-align: start;
+    margin: 5px 20px;
+}
+
+.nav-elem {
+    display: inline;
+    padding: 0 2%;
+}
+
+.nav-elem a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.3em;
+    color: var(--grayish-white);
+}
+
+.nav-elem a:hover {
+    color: var(--main-white);
+    border-bottom: solid 3px var(--main-red);
+}
+/* all the block below all the way to the last keyframe set all of the elements on the right side including
+animations and hidden blocks the are activated by js*/
+#user {
+    float: right;
+    color: var(--main-white);
+}
+
+#user img {
+    height: 50px;
+    width: 50px;
+    margin: 0 10px;
+}
+
+.top-icon {
+    margin: 5px 30px;
+    padding: 10px 0;
+    float: left;
+    cursor: pointer;
+}
+
+#search {
+    margin: 5px 0;
+}
+/* We have two style blocks for the searchbar that fades in and out. The only difference between them is
+the animation they point to. It was easier to trigger animations back and forth on js by swaping classes, instead
+of trying to change the animation attribute value.*/
+#search-bar {
+    background-color: var(--nav-color);
+    color: var(--main-white);
+    width: 260px;
+    height: 20px;
+    border: solid 1px var(--main-white);
+    float: left;
+    margin: 15px 0 0 0;
+    animation: bar-animation;
+    animation-duration: 2s;
+}
+
+#search-bar-fade-out {
+    background-color: var(--nav-color);
+    color: var(--main-white);
+    width: 260px;
+    height: 20px;
+    border: solid 1px var(--main-white);
+    float: left;
+    margin: 15px 0 0 0;
+    animation: reverse-bar-animation;
+    animation-duration: 2s;
+}
+
+#bell-drop-down {
+    min-width: 300px;
+    min-height: 320px;
+    max-width: 300px;
+    max-height: 320px;
+    overflow-y: scroll;
+    z-index: 99;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.445);
+    border: solid 1px var(--main-white);
+    top: 50px;
+    right: 5px;
+    display: none;
+}
+
+#user-drop-down {
+    min-width: 220px;
+    min-height: 390px;
+    max-width: 220px;
+    max-height: 390px;
+    overflow: hidden;
+    z-index: 99;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.671);
+    border: solid 1px var(--main-white);
+    top: 50px;
+    right: 2px;
+    color: var(--main-white);
+    display: none;
+}
+
+.user-profile {
+    margin: 5px 5px;
+    padding: 0;
+    min-width: 210px;
+    max-height: 60px;
+    display: flex;
+}
+
+.user-profile img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.user-profile span {
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.user-profile span:hover {
+    text-decoration: underline;
+}
+
+.user-drop-down-icon {
+    margin: 5px 0;
+    padding: 5px 15px 10px 10px; 
+    min-width: 210px;
+    border-bottom: solid 1px var(--main-white);
+}
+
+.user-drop-down-icon span {
+    margin: 0 0 0 30px;
+}
+
+.user-drop-down-icon span:hover {
+    text-decoration: underline;
+}
+
+#user-icon-separator {
+    min-width: 15px;
+}
+
+#conta {
+    border-bottom: none;
+}
+
+#pen-icon {
+    -moz-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+#sair {
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#sair:hover {
+    text-decoration: underline;
+}
+
+.icon-margin {
+    margin: 0 0 0 15px;
+}
+
+.drop-down-item {
+    display: flex;
+    min-width: 300px;
+    min-height: 100px;
+    border-bottom: 1px solid var(--grayish-white);
+    padding: 0;
+    margin: 0;
+}
+
+.drop-down-item h5 {
+    font-weight: bold;
+    color: var(--main-white);
+    margin: 1px;
+    padding: 1px 6px;
+    font-size: 1.4em;
+    margin: 5px 0 0 10px;
+}
+
+.drop-down-item h6 {
+    font-weight: lighter;
+    color: var(--grayish-white);
+    margin: 1px;
+    padding: 1px 6px;
+    font-size: .8em;
+    margin: 2px 0 0 10px;
+}
+
+.drop-down-item-desc {
+    min-width: 200px;
+    min-height: 100px;
+}
+
+.drop-down-item-img {
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+@keyframes bar-animation {
+    0% {width: 0px;}
+    100%{width: 260px;}
+}
+
+@keyframes reverse-bar-animation {
+    0% {max-width: 260px;}
+    100%{max-width: 0px;}
+}
+/* Main content ad on the page. Large image that takes up most of the screen. The next 9 blocks 
+set the style of that section*/
+#main-ad {
+    padding: 90px 70px;
+    min-height: 500px;
+    width: 100%;
+    color: var(--main-white);
+    background-image: url('./resources/narcos-ad.jpg');
+    background-size: cover;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.226);
+    background-blend-mode: multiply;
+}
+
+#content-id {
+    margin: 0;
+    font-size: 2.3em;
+    font-weight: bolder;
+}
+
+#original {
+    font-weight: lighter;
+    font-size: .9em;
+}
+
+#ad-title {
+    margin: 0;
+    font-size: 6.2em;
+}
+
+#ad-sub-title {
+    font-size: 1.7em;
+    font-weight: lighter;
+}
+
+#ad-description {
+    font-size: 1.4em;
+    font-weight: lighter;
+    max-width: 35%;
+}
+
+#ad-buttons-wrapper {
+    display: flex;
+    margin: 0 0 0 60px;
+}
+
+.ad-button {
+    min-width: 80px;
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 5%;
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.ad-button:hover {
+    background-color: rgba(255, 255, 255, 0.753);
+    color: black;
+}
+/* All blocks bellow stylize and sets the behavior of the interactble movie galleries that scrolls sideways*/
+.outter-div {
+    margin: 0 0 20px 0;
+    width: 100%;
+    position: relative;
+    bottom: 27px;
+}
+
+.row-title {
+    color: var(--main-white);
+    font-size: 1.5em;
+    margin: 0;
+    padding: 15px 15px 0 15px;
+}
+/* The actual content gallery that scrolls sideways*/
+.movie-container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 20px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+/* Hides the scrollbar for chrome and main browsers*/
+.movie-container::-webkit-scrollbar {
+    display: none;
+}
+/* Hides scrollbar for IE and firefox*/
+.movie-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+.movie-container a {
+    margin: 0 3px;
+}
+/* Sets the size of the images inside the content gallery*/
+.movie-card {
+    width: 200px;
+    height: 120px;
+}
+/*There's an empty div at the beggining of every content gallery, to create initial clear space between the
+content gallery and the left side of the screen*/
+#initial-space {
+    min-width: 50px;
+    min-height: 120px;
+}
+
+.movie-card:hover {
+    padding: 0;
+    border: 3px solid var(--main-red);
+}
+
+/* The side buttons scroll the galleries when you hover over them. 
+They are also invisible until you hover over them*/
+.side-button-container {
+    height: 120px;
+    width: 80px;
+    color: rgba(0, 0, 0, 0.719);
+    background-color: rgba(255, 255, 255, 0.623);
+    position: absolute;
+    font-size: 8em;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.side-button-container:hover {
+    opacity: 100%;
+}
+
+.left {
+    left: 1px;
+}
+
+.right {
+    right: 1px;
+    text-align: end;
+}
+
+#main-footer {
+    min-width: 80%;
+    max-width: 80%;
+    margin: auto;
+}
+
+#footer-icons-row {
+    margin: 10px;
+}
+
+#footer-icons-row i {
+    margin: 10px;
+    font-size: 1.5em;
+    color: var(--main-white);
+    cursor: pointer;
+}
+
+#footer-links {
+    display: flex;
+}
+
+#footer-links ul {
+    margin: 10px 20px 10px 0;
+    list-style: none;
+}
+
+#footer-links li {
+    margin: 10px 0 10px 0;
+    padding: 7px 0;
+    width: 180px;
+    font-size: .87em;
+}
+
+#footer-links a {
+    text-decoration: none;
+    color: var(--grayish-white);
+}
+
+#footer-links a:hover {
+    text-decoration: underline;
+}
+
+#footer-btn {
+    margin: 10px 20px;
+    padding: 10px 15px;
+    border: solid 1px var(--main-white);
+    color: var(--grayish-white);
+    max-width: 120px;
+    font-size: .9em;
+    cursor: pointer;
+}
+
+#footer-btn:hover {
+    color: var(--main-white);
+}
+
+#footer-note {
+    font-size: .7em;
+    color: var(--grayish-white);
+    margin: 10px 20px;
+    padding: 10px 15px;
+}
