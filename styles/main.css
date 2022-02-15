@@ -266,12 +266,12 @@ of trying to change the animation attribute value.*/
 }
 /* Main content ad on the page. Large image that takes up most of the screen. The next 9 blocks 
 set the style of that section*/
-#main-ad {
+#main-content{
     padding: 90px 70px;
     min-height: 500px;
     width: 100%;
     color: var(--main-white);
-    background-image: url('../resources/narcos-ad.jpg');
+    background-image: url('https://lukdelga.github.io/netflix-mockup/resources/narcos-ad.jpg');
     background-size: cover;
     margin: 0;
     background-color: rgba(0, 0, 0, 0.226);
@@ -289,28 +289,28 @@ set the style of that section*/
     font-size: .9em;
 }
 
-#ad-title {
+#main-content-title {
     margin: 0;
     font-size: 6.2em;
 }
 
-#ad-sub-title {
+#main-content-sub-title {
     font-size: 1.7em;
     font-weight: lighter;
 }
 
-#ad-description {
+#main-content-description {
     font-size: 1.4em;
     font-weight: lighter;
     max-width: 35%;
 }
 
-#ad-buttons-wrapper {
+#main-content-buttons-wrapper {
     display: flex;
     margin: 0 0 0 60px;
 }
 
-.ad-button {
+.main-content-button {
     min-width: 80px;
     background-color: rgba(0, 0, 0, 0.459);
     border-radius: 5%;
@@ -320,7 +320,7 @@ set the style of that section*/
     text-align: center;
 }
 
-.ad-button:hover {
+.main-content-button:hover {
     background-color: rgba(255, 255, 255, 0.753);
     color: black;
 }
