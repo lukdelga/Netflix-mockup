@@ -271,7 +271,7 @@ set the style of that section*/
     min-height: 500px;
     width: 100%;
     color: var(--main-white);
-    background-image: url('https://lukdelga.github.io/netflix-mockup/resources/narcos-ad.jpg');
+    background-image: url('https://lukdelga.github.io/netflix-mockup/resources/narcos-1.jpg');
     background-size: cover;
     margin: 0;
     background-color: rgba(0, 0, 0, 0.226);
@@ -463,4 +463,36 @@ They are also invisible until you hover over them*/
     color: var(--grayish-white);
     margin: 10px 20px;
     padding: 10px 15px;
+}
+
+@media screen and (max-width: 700px) {
+    #main-header {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-around;
+    }
+    
+    #user {
+        margin: auto;
+    }
+
+    #main-content {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        background-position: -280px;
+        background-image: url(https://lukdelga.github.io/netflix-mockup/resources/narcos-2.jpg);
+    }
+
+    #main-content-description {
+        min-width: 80%;
+        text-align: justify;
+    }
+
+    #footer-links {
+        flex-direction: column;
+    }
+
 }
