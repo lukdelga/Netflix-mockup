@@ -465,7 +465,7 @@ They are also invisible until you hover over them*/
     padding: 10px 15px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
     #main-header {
         display: flex;
         flex-direction: column;
